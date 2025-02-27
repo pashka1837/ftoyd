@@ -7,7 +7,7 @@ export async function getMatches() {
     const res = await fetch(`${baseUrl}/fronttemp`);
     if (!res.ok) throw Error("Ошибка: не удалось загрузить информацию");
     const { data } = await res.json();
-    return data as MatchType[];
+    return data.matches as MatchType[];
   } catch (error: any) {
     throw Error(error?.message || "Что-то пошло не так, попробуйте еще раз");
   }
@@ -25,6 +25,7 @@ export async function loadData(
     setMatches(data);
   } catch (error: any) {
     setErrorMsg(error.message);
+    setMatches([]);
   }
   setLoading(false);
 }

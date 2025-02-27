@@ -18,7 +18,7 @@ export function MatchLoader({
   loading,
 }: MatchLoaderProps) {
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between select-none">
       <p
         className="text-[24px] sm:text-[28px] lg:text-[32px] italic font-normal"
         style={{ fontFamily: "Tactic Sans" }}
