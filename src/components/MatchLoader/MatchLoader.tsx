@@ -25,7 +25,7 @@ export function MatchLoader({
       >
         Match Tracker
       </p>
-      <div className="flex gap-[12px]">
+      <div className="flex gap-[12px]  flex-col-reverse items-end lg:flex-row lg:items-center">
         <ErrorHandler errorMsg={errorMsg} />
         <UpdateBtn
           setMatches={setMatches}

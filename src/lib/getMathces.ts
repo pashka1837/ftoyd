@@ -5,11 +5,15 @@ const baseUrl = import.meta.env.VITE_BASE_URL;
 export async function getMatches() {
   try {
     const res = await fetch(`${baseUrl}/fronttemp`);
-    if (!res.ok) throw Error("Ошибка: не удалось загрузить информацию");
+    if (!res.ok) throw Error();
     const { data } = await res.json();
     return data.matches as MatchType[];
   } catch (error: any) {
-    throw Error(error?.message || "Что-то пошло не так, попробуйте еще раз");
+    throw Error(
+      error?.message
+        ? "Что-то пошло не так, проверьте соединение"
+        : "Ошибка: не удалось загрузить информацию"
+    );
   }
 }
 

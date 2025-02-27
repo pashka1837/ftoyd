@@ -7,7 +7,7 @@ type MatchesProps = {
 
 export default function Matches({ matches }: MatchesProps) {
   return (
-    <div className="flex flex-col gap-[12px]">
+    <div className="flex flex-col gap-[12px] h-[100%] overflow-y-auto">
       {matches.map((m) => (
         <SingleMatch match={m} key={m.time + m.title} />
       ))}

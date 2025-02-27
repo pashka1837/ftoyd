@@ -9,7 +9,7 @@ type SingleMatchProps = {
 export function SingleMatch({ match }: SingleMatchProps) {
   return (
     <div
-      className="flex justify-between rounded-[4px] 
+      className="flex gap-[15px] sm:gap-0 justify-between rounded-[4px] 
     p-[16px]  bg-bg-card select-none"
     >
       <TeamDesc name={match.homeTeam.name} />
