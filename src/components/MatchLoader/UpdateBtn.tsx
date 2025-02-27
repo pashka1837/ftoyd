@@ -18,7 +18,7 @@ export function UpdateBtn({
   return (
     <button
       className={`bg-red-main hover:bg-red-hvr disabled:bg-red-dsbl 
-    rounded-[4px] p-[16px] font-medium text-[18px] 
+    rounded-[4px] p-[16px] text-[18px] font-semibold
     flex gap-[10px] justify-center w-[204px] h-[56px]`}
       disabled={loading}
       onClick={() => loadData(setMatches, setErrorMsg, setLoading)}

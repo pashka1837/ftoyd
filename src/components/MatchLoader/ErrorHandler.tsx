@@ -5,7 +5,7 @@ export function ErrorHandler() {
     <div
       className="h-[56px] rounded-[4px] p-[16px]  
   flex gap-[10px] justify-center w-[480px]
-  bg-bg-card"
+  bg-bg-card font-medium"
     >
       <img src={errorIcon} alt="error icon" />
       <p className="font-medium text-[18px]">

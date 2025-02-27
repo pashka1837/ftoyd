@@ -20,7 +20,7 @@ export function MatchLoader({
   return (
     <div className="flex justify-between">
       <p
-        className="text-[24px] sm:text-[28px] lg:text-[32px] italic"
+        className="text-[24px] sm:text-[28px] lg:text-[32px] italic font-normal"
         style={{ fontFamily: "Tactic Sans" }}
       >
         Match Tracker
