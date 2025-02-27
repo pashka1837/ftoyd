@@ -1,19 +1,29 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: Tactic Sans;
+  src: url(assets/fonts/tactic-sans-regular.ttf);
+}
+
 @theme {
-  --color-main-bg: #06080c;
+  --color-bg-main: #06080c;
+  --color-bg-card: #0f1318;
+  --color-red-main: #eb0237;
+  --color-red-hvr: #a01131;
+  --color-red-dsbl: #701328;
+  --color-green-main: #43ad28;
+  --color-orange-main: #eb6402;
+  --color-white-main: #ffffff;
 }
 
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  /* padding: 0;
+  margin: 0; */
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #06080c;
 }
