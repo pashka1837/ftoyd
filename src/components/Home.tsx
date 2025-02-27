@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect, useState } from "react";
 import { MatchLoader } from "./MatchLoader/MatchLoader";
 import { MatchType } from "../types";
 import { loadData } from "../lib/getMathces";
+import { Loader } from "../ui-lib/Loader";
 
 const Matches = lazy(() => import("./Matches/Matches"));
 
@@ -16,7 +17,7 @@ export function Home() {
 
   return (
     <div
-      className="w-[100%] h-[100%] text-white-main p-4 sm:p-6 lg:p-10.5 
+      className="w-[100%] h-[100dvh] text-white-main p-4 sm:p-6 lg:p-10.5 
     flex flex-col gap-[16px]"
     >
       <MatchLoader
@@ -26,8 +27,9 @@ export function Home() {
         loading={loading}
         errorMsg={errorMsg}
       />
+      {loading && !matches.length && <Loader />}
       {!!matches.length && !errorMsg && (
-        <Suspense fallback={<h1>loading</h1>}>
+        <Suspense fallback={<Loader />}>
           <Matches matches={matches} />
         </Suspense>
       )}
