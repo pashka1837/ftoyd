@@ -26,7 +26,7 @@ export function MatchLoader({
         Match Tracker
       </p>
       <div className="flex gap-[12px]">
-        {errorMsg && <ErrorHandler />}
+        <ErrorHandler errorMsg={errorMsg} />
         <UpdateBtn
           setMatches={setMatches}
           setErrorMsg={setErrorMsg}
