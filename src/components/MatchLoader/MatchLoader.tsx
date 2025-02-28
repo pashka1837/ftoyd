@@ -1,5 +1,6 @@
 import { MatchType } from "../../types";
 import { ErrorHandler } from "./ErrorHandler";
+import { Filter } from "./Filter";
 import { UpdateBtn } from "./UpdateBtn";
 
 type MatchLoaderProps = {
@@ -22,15 +23,19 @@ export function MatchLoader({
       className="select-none flex flex-col md:flex-row 
     md:items-center md:justify-between  gap-[10px] lg:gap-1"
     >
-      <p
-        className="text-[28px] md:text-[30px] lg:text-[32px] 
+      <div className="flex flex-col lg:flex-row gap-x-[18px] gap-y-[10px] lg:items-center">
+        <p
+          className="text-[28px] md:text-[30px] lg:text-[32px] 
         italic font-normal text-center"
-        style={{ fontFamily: "Tactic Sans" }}
-      >
-        Match Tracker
-      </p>
+          style={{ fontFamily: "Tactic Sans" }}
+        >
+          Match Tracker
+        </p>
+        <Filter />
+      </div>
+
       <div
-        className="flex gap-x-[10px] gap-y-[12px]  flex-col-reverse 
+        className="flex gap-x-[10px] gap-y-[10px]  flex-col-reverse 
       lg:flex-row  lg:justify-end
       md:min-w-[475px]"
       >

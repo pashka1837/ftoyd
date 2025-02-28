@@ -9,3 +9,10 @@ export const bgColors = {
   [MatchStatuses.Ongoing]: "bg-green-main",
   [MatchStatuses.Finished]: "bg-red-main",
 };
+
+export const showStatuses = {
+  All: "Все статусы",
+  [MatchStatuses.Ongoing]: "Live",
+  [MatchStatuses.Finished]: MatchStatuses.Finished,
+  [MatchStatuses.Scheduled]: "Match preparing",
+};

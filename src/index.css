@@ -4,13 +4,26 @@
 
 @theme {
   --color-bg-main: #06080c;
-  --color-bg-card: #0f1318;
+  --color-bg-card: #0b0e12;
+  --color-bg-card-hvr: #0f1318;
+
   --color-red-main: #eb0237;
   --color-red-hvr: #a01131;
   --color-red-dsbl: #701328;
   --color-green-main: #43ad28;
   --color-orange-main: #eb6402;
   --color-white-main: #ffffff;
+
+  --color-dropBtn-def: #0b0e12;
+  --color-dropBtn-hvr: #0f1318;
+  --color-dropBtn-bord: #171d25;
+
+  --color-dropItm-def: #0f1318;
+  --color-dropItm-hvr: #11161d;
+  --color-dropItm-actv: #0d1115;
+
+  --color-text-second: #b4b5b6;
+  --color-text-dsbl: #68696a;
 }
 
 @font-face {
