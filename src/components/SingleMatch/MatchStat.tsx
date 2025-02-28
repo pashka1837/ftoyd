@@ -8,7 +8,7 @@ type MatchStatProps = {
 export function MatchStat({ homeScore, awayScore, status }: MatchStatProps) {
   return (
     <div className="flex flex-col gap-[4px] items-center font-semibold lg:w-[92px]">
-      <p className="text-[20px]">
+      <p className="text-[14px] md:text-[18px] lg:text-[20px]">
         {homeScore} : {awayScore}
       </p>
       <div

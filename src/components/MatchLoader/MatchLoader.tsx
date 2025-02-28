@@ -18,14 +18,22 @@ export function MatchLoader({
   loading,
 }: MatchLoaderProps) {
   return (
-    <div className="flex justify-between select-none">
+    <div
+      className="select-none flex flex-col md:flex-row 
+    md:items-center md:justify-between  gap-[10px] lg:gap-1"
+    >
       <p
-        className="text-[24px] sm:text-[28px] lg:text-[32px] italic font-normal"
+        className="text-[28px] md:text-[30px] lg:text-[32px] 
+        italic font-normal text-center"
         style={{ fontFamily: "Tactic Sans" }}
       >
         Match Tracker
       </p>
-      <div className="flex gap-[12px]  flex-col-reverse items-end lg:flex-row lg:items-center">
+      <div
+        className="flex gap-x-[10px] gap-y-[12px]  flex-col-reverse 
+      lg:flex-row  lg:justify-end
+      md:min-w-[475px]"
+      >
         <ErrorHandler errorMsg={errorMsg} />
         <UpdateBtn
           setMatches={setMatches}
