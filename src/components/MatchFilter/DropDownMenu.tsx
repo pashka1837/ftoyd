@@ -16,7 +16,8 @@ export function DropDownMenu({
     <div
       className="absolute left-0 right-0 mt-[8px]
                     bg-dropItm-def  rounded-[4px]
-                     pt-[6px] pb-[6px]"
+                     pt-[6px] pb-[6px]
+                     animate-slide shadow-dropMenu"
     >
       {Object.entries(showStatuses).map(([key, val]) => (
         <DropDownItem

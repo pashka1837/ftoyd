@@ -24,6 +24,19 @@
 
   --color-text-second: #b4b5b6;
   --color-text-dsbl: #68696a;
+
+  --shadow-dropMenu: 0 2px 4px #0d101359;
+
+  --animate-slide: slide 0.3s ease-out;
+  @keyframes slide {
+    0% {
+      transform: translateY(-64px);
+    }
+    ,
+    100% {
+      transform: translateY(0);
+    }
+  }
 }
 
 @font-face {

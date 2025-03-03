@@ -25,7 +25,7 @@ export function DropDownItem({
       className="pt-[8px] pb-[8px] pl-[12px] pr-[12px]
   bg-dropItm-def hover:bg-dropItm-hvr active:bg-dropItm-actv
   active:text-white-main hover:text-white-main disabled:text-text-dsbl
-  w-[100%] h-[48px] text-left"
+  w-[100%] h-[48px] text-left cursor-pointer"
       type="button"
       onClick={handleClick}
     >
