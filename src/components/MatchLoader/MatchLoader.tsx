@@ -1,7 +1,7 @@
 import { MatchStatuses } from "../../constants";
 import { MatchType } from "../../types";
+import { MatchFilter } from "../MatchFilter/MatchFilter";
 import { ErrorHandler } from "./ErrorHandler";
-import { Filter } from "./Filter";
 import { UpdateBtn } from "./UpdateBtn";
 
 type MatchLoaderProps = {
@@ -36,7 +36,7 @@ export function MatchLoader({
         >
           Match Tracker
         </p>
-        <Filter setFilter={setFilter} filter={filter} />
+        <MatchFilter setFilter={setFilter} filter={filter} />
       </div>
 
       <div
