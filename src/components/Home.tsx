@@ -1,6 +1,6 @@
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import { MatchLoader } from "./MatchLoader/MatchLoader";
-import { MatchType } from "../types";
+import { FilterType, MatchType } from "../types";
 import { loadData } from "../lib/getMathces";
 import { Loader } from "../ui-lib/Loader";
 
@@ -8,12 +8,19 @@ const Matches = lazy(() => import("./Matches/Matches"));
 
 export function Home() {
   const [matches, setMatches] = useState<MatchType[]>([]);
+  const [filter, setFilter] = useState<FilterType>("All");
+
   const [errorMsg, setErrorMsg] = useState("");
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     loadData(setMatches, setErrorMsg, setLoading);
   }, []);
+
+  const filtMatches = useMemo(() => {
+    if (filter === "All") return matches;
+    return matches.filter((m) => m.status === filter);
+  }, [filter, matches]);
 
   return (
     <div
@@ -26,11 +33,13 @@ export function Home() {
         setLoading={setLoading}
         loading={loading}
         errorMsg={errorMsg}
+        setFilter={setFilter}
+        filter={filter}
       />
       {loading && !matches.length && <Loader />}
       {!!matches.length && !errorMsg && (
         <Suspense fallback={<Loader />}>
-          <Matches matches={matches} />
+          <Matches matches={filtMatches} />
         </Suspense>
       )}
     </div>

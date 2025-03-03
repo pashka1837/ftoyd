@@ -1,4 +1,4 @@
-import { MatchStatuses } from "./constants";
+import { MatchStatuses, showStatuses } from "./constants";
 
 type PlayerType = {
   username: string;
@@ -22,3 +22,5 @@ type MatchType = {
   awayScore: number;
   status: MatchStatuses;
 };
+
+type FilterType = keyof typeof showStatuses;

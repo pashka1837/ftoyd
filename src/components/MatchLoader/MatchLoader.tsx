@@ -1,3 +1,4 @@
+import { MatchStatuses } from "../../constants";
 import { MatchType } from "../../types";
 import { ErrorHandler } from "./ErrorHandler";
 import { Filter } from "./Filter";
@@ -9,6 +10,8 @@ type MatchLoaderProps = {
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
   errorMsg: string;
   loading: boolean;
+  setFilter: React.Dispatch<React.SetStateAction<MatchStatuses | "All">>;
+  filter: MatchStatuses | "All";
 };
 
 export function MatchLoader({
@@ -17,6 +20,8 @@ export function MatchLoader({
   setLoading,
   errorMsg,
   loading,
+  setFilter,
+  filter,
 }: MatchLoaderProps) {
   return (
     <div
@@ -31,7 +36,7 @@ export function MatchLoader({
         >
           Match Tracker
         </p>
-        <Filter />
+        <Filter setFilter={setFilter} filter={filter} />
       </div>
 
       <div
