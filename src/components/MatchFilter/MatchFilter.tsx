@@ -15,15 +15,10 @@ export function MatchFilter({ setFilter, filter }: MatchFilterProps) {
     setOpen(false)
   ) as React.RefObject<HTMLDivElement | null>;
   return (
-    <div className="relative text-text-second z-10">
+    <div className="relative text-text-second z-10" ref={ref}>
       <FilterBtn open={open} setOpen={setOpen} filter={filter} />
       {open && (
-        <DropDownMenu
-          ref={ref}
-          setFilter={setFilter}
-          filter={filter}
-          setOpen={setOpen}
-        />
+        <DropDownMenu setFilter={setFilter} filter={filter} setOpen={setOpen} />
       )}
     </div>
   );
