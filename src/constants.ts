@@ -1,3 +1,5 @@
+import { ReadyState } from "react-use-websocket";
+
 export enum MatchStatuses {
   Scheduled = "Scheduled",
   Ongoing = "Ongoing",
@@ -15,4 +17,12 @@ export const showStatuses = {
   [MatchStatuses.Ongoing]: "Live",
   [MatchStatuses.Finished]: MatchStatuses.Finished,
   [MatchStatuses.Scheduled]: "Match preparing",
+};
+
+export const connectionStatus = {
+  [ReadyState.CONNECTING]: "Connecting",
+  [ReadyState.OPEN]: "Open",
+  [ReadyState.CLOSING]: "Closing",
+  [ReadyState.CLOSED]: "Closed",
+  [ReadyState.UNINSTANTIATED]: "Uninstantiated",
 };

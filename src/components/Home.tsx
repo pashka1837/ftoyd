@@ -3,6 +3,7 @@ import { MatchLoader } from "./MatchLoader/MatchLoader";
 import { FilterType, MatchType } from "../types";
 import { loadData } from "../lib/getMathces";
 import { Loader } from "../ui-lib/Loader";
+import { useUpdateMatches } from "../lib/updMatchesHook";
 
 const Matches = lazy(() => import("./Matches/Matches"));
 
@@ -16,6 +17,8 @@ export function Home() {
   useEffect(() => {
     loadData(setMatches, setErrorMsg, setLoading);
   }, []);
+
+  useUpdateMatches(setMatches, setErrorMsg, loading);
 
   const filtMatches = useMemo(() => {
     if (filter === "All") return matches;
