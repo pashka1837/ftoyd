@@ -1,10 +1,14 @@
+import { memo } from "react";
 import arrowIcon from "../../assets/arrow-down.png";
 
 type DropDownBtnProps = {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   open: boolean;
 };
-export function DropDownBtn({ open, setOpen }: DropDownBtnProps) {
+export const DropDownBtn = memo(function DropDownBtn({
+  open,
+  setOpen,
+}: DropDownBtnProps) {
   return (
     <button
       className={`outline-none flex place-items-center ${
@@ -15,4 +19,4 @@ export function DropDownBtn({ open, setOpen }: DropDownBtnProps) {
       <img src={arrowIcon} alt="arrow icon" />
     </button>
   );
-}
+});

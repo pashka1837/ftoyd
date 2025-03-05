@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { MatchStatuses } from "../../constants";
 import { MatchType } from "../../types";
 import { MatchFilter } from "../MatchFilter/MatchFilter";
@@ -14,7 +15,7 @@ type MatchLoaderProps = {
   filter: MatchStatuses | "All";
 };
 
-export function MatchLoader({
+export const MatchLoader = memo(function MatchLoader({
   setMatches,
   setErrorMsg,
   setLoading,
@@ -54,4 +55,4 @@ export function MatchLoader({
       </div>
     </div>
   );
-}
+});

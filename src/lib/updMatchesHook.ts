@@ -1,6 +1,6 @@
 import useWebSocket from "react-use-websocket";
 import { MatchType } from "../types";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { connectionStatus } from "../constants";
 
 const wsUrl = import.meta.env.VITE_WS_URL;
@@ -10,6 +10,8 @@ export function useUpdateMatches(
   setErrorMsg: React.Dispatch<React.SetStateAction<string>>,
   loading: boolean
 ) {
+  const didUnmount = useRef(false);
+
   const { lastMessage, readyState } = useWebSocket(wsUrl, {
     filter(msg) {
       const { type } = JSON.parse(msg.data);
@@ -18,8 +20,11 @@ export function useUpdateMatches(
     onError() {
       setErrorMsg("Ошибка: не удалось загрузить информацию");
     },
+    shouldReconnect() {
+      return didUnmount.current === false;
+    },
     retryOnError: true,
-    reconnectAttempts: 5,
+    reconnectAttempts: 8,
     reconnectInterval: 3000,
   });
 
@@ -32,4 +37,10 @@ export function useUpdateMatches(
 
     setMatches(data);
   }, [lastMessage, readyState, loading, setMatches]);
+
+  useEffect(() => {
+    return () => {
+      didUnmount.current = true;
+    };
+  }, []);
 }
