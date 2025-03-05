@@ -14,6 +14,7 @@ export function MatchInfo({ match }: MatchInfoProps) {
     >
       <TeamDesc name={match.homeTeam.name} />
       <MatchStat
+        timeStamp={match.time}
         awayScore={match.awayScore}
         homeScore={match.homeScore}
         status={match.status}

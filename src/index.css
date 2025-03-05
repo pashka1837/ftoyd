@@ -36,10 +36,21 @@
       opacity: 0;
       transform: translateY(-64px);
     }
-    ,
     100% {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  --animate-bounce: bounce 0.6s;
+  @keyframes bounce {
+    0% {
+      transform: translateY(-15%) scale(1.15);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: none;
+      animation-timing-function: cubic-bezier(0, 0, 0.8, 1);
     }
   }
 }
