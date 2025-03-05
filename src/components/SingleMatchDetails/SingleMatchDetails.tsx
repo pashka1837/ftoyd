@@ -12,8 +12,8 @@ export default function SingleMatchDetails({
 }: SingleMatchDetailsProps) {
   return (
     <div
-      className="flex flex-col lg:flex-row gap-y-[8px] lg:gap-x-[32px]
-      md:p-[12px] w-[100%]"
+      className={`flex flex-col lg:flex-row gap-y-[8px] lg:gap-x-[32px]
+      md:p-[12px] w-[100%] animate-slide`}
     >
       <TeamDetails {...homeTeam} />
       <Divider />

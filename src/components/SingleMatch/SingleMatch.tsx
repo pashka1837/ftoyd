@@ -1,7 +1,8 @@
-import { lazy, useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import { MatchType } from "../../types";
 import { DropDownBtn } from "./DropDownBtn";
 import { MatchInfo } from "./MatchInfo";
+import { Loader } from "../../ui-lib/Loader";
 
 const SingleMatchDetails = lazy(
   () => import("../SingleMatchDetails/SingleMatchDetails")
@@ -27,10 +28,12 @@ export function SingleMatch({ match }: SingleMatchProps) {
       </div>
 
       {open && (
-        <SingleMatchDetails
-          homeTeam={match.homeTeam}
-          awayTeam={match.awayTeam}
-        />
+        <Suspense fallback={<Loader />}>
+          <SingleMatchDetails
+            homeTeam={match.homeTeam}
+            awayTeam={match.awayTeam}
+          />
+        </Suspense>
       )}
     </div>
   );
