@@ -4,13 +4,55 @@
 
 @theme {
   --color-bg-main: #06080c;
-  --color-bg-card: #0f1318;
+  --color-bg-card: #0b0e12;
+  --color-bg-card-hvr: #0f1318;
+
   --color-red-main: #eb0237;
   --color-red-hvr: #a01131;
   --color-red-dsbl: #701328;
   --color-green-main: #43ad28;
   --color-orange-main: #eb6402;
   --color-white-main: #ffffff;
+
+  --color-dropBtn-def: #0b0e12;
+  --color-dropBtn-hvr: #0f1318;
+  --color-dropBtn-bord: #171d25;
+
+  --color-dropItm-def: #0f1318;
+  --color-dropItm-hvr: #11161d;
+  --color-dropItm-actv: #0d1115;
+
+  --color-text-second: #b4b5b6;
+  --color-text-dsbl: #68696a;
+
+  --color-bg-teamDetails: #101318;
+  --color-text-teamDetails: #fafafa66;
+
+  --shadow-dropMenu: 0 2px 4px #0d101359;
+
+  --animate-slide: slide 0.3s ease-out;
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(-64px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  --animate-bounce: bounce 0.6s;
+  @keyframes bounce {
+    0% {
+      transform: translateY(-15%) scale(1.15);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: none;
+      animation-timing-function: cubic-bezier(0, 0, 0.8, 1);
+    }
+  }
 }
 
 @font-face {
@@ -30,4 +72,17 @@ body {
 }
 #root {
   height: 100%;
+}
+
+.details-closed {
+  transform: translateY(-200px);
+  display: none;
+  opacity: 0;
+}
+
+.details-open {
+  transform: translateY(0);
+  display: flex;
+  opacity: 1;
+  transition: all ease-out 300ms;
 }

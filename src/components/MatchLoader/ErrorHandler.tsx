@@ -9,7 +9,7 @@ export function ErrorHandler({ errorMsg }: ErrorHandlerProps) {
     <div
       className="lg:h-[56px] rounded-[4px] p-[16px]  
   flex gap-[10px] justify-center items-center
-  lg:min-w-[480px] bg-bg-card font-medium"
+  w-[100%] lg:w-[480px] bg-bg-card font-medium"
     >
       <img src={errorIcon} alt="error icon" />
       <p className="font-medium text-[18px] text-balance">{errorMsg}</p>
